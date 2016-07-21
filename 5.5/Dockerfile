@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
 RUN docker-php-ext-install zip
 
 # Install Pecl Extensions
-RUN pecl install xdebug && \
+RUN pecl install xdebug-2.4.0 && \
     echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20121212/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install Composer

@@ -1,4 +1,4 @@
-FROM php:7.0
+FROM php:5.6
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
     zlib1g-dev \
@@ -9,7 +9,7 @@ RUN docker-php-ext-install zip
 
 # Install Pecl Extensions
 RUN pecl install xdebug-2.4.0 && \
-    echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini
+    echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
