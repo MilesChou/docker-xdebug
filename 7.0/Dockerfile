@@ -1,5 +1,8 @@
 FROM php:7.0
 
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
     zlib1g-dev \
     && rm -r /var/lib/apt/lists/*
