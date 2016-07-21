@@ -1,2 +1,3 @@
-# php-testing-base
-PHP testing base for GitLab CI or other CI system.
+# PHP testing base
+
+PHP testing base include Composer for GitLab CI or other CI system.
