@@ -1,5 +1,13 @@
 FROM php:5.5
 
+# Install Deploy tools
+RUN curl -LOs https://github.com/rancher/rancher-compose/releases/download/v0.9.0/rancher-compose-linux-amd64-v0.9.0.tar.gz && \
+tar zxvf rancher-compose-linux-amd64-v0.9.0.tar.gz && \
+cd rancher-compose-v0.9.0 && \
+mv rancher-compose /usr/local/bin/ && \
+cd .. && rm -R rancher-compose-linux-amd64-v0.9.0.tar.gz rancher-compose-v0.9.0
+FROM php:5.5
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -20,3 +28,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
+
+# Install Deploy tools
+RUN curl -LOs https://github.com/rancher/rancher-compose/releases/download/v0.9.0/rancher-compose-linux-amd64-v0.9.0.tar.gz && \
+tar zxvf rancher-compose-linux-amd64-v0.9.0.tar.gz && \
+cd rancher-compose-v0.9.0 && \
+mv rancher-compose /usr/local/bin/ && \
+cd .. && rm -R rancher-compose-linux-amd64-v0.9.0.tar.gz rancher-compose-v0.9.0
