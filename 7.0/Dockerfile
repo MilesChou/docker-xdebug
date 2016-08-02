@@ -4,11 +4,24 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
-    zlib1g-dev \
+        libbz2-dev \
+        zlib1g-dev \
     && rm -r /var/lib/apt/lists/*
 
 # Install Extensions
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install bz2 zip
+
+# Install testing packages
+RUN set -xe && \
+        curl -LOs http://codeception.com/codecept.phar && \
+            chmod +x codecept.phar && \
+            mv codecept.phar /usr/local/bin/codecept && \
+        curl -LOs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
+            chmod +x phpcs.phar && \
+            mv phpcs.phar /usr/local/bin/phpcs && \
+        curl -LOs http://static.phpmd.org/php/latest/phpmd.phar && \
+            chmod +x phpmd.phar && \
+            mv phpmd.phar /usr/local/bin/phpmd
 
 # Install Pecl Extensions
 RUN pecl install xdebug-2.4.0 && \
