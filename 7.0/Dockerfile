@@ -25,6 +25,8 @@ RUN set -xe && \
         && \
         docker-php-ext-install \
             bz2 \
+            pdo \
+            pdo_mysql \
             zip \
         && rm -r /var/lib/apt/lists/* && \
         pecl install xdebug-2.4.0 && \

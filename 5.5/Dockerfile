@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     && rm -r /var/lib/apt/lists/*
 
 # Install Extensions
-RUN docker-php-ext-install bz2 zip
+RUN docker-php-ext-install bz2 pdo pdo_mysql zip
 
 # Install Pecl Extensions
 RUN pecl install xdebug-2.4.0 && \
