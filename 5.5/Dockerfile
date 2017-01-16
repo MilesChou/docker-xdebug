@@ -1,21 +1,21 @@
 FROM php:5.5
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+ENV DAPPER_SOURCE /usr/src/app
+RUN mkdir -p ${DAPPER_SOURCE}
+WORKDIR ${DAPPER_SOURCE}
 
 ENV DOCKER_BUCKET get.docker.com
-ENV DOCKER_VERSION 1.12.1
-ENV DOCKER_SHA256 05ceec7fd937e1416e5dce12b0b6e1c655907d349d52574319a1e875077ccb79
+ENV DOCKER_VERSION 1.12.6
+ENV DOCKER_SHA256 cadc6025c841e034506703a06cf54204e51d0cadfae4bae62628ac648d82efdd
 
-# Install Docker Client
 RUN set -x \
-	&& curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
-	&& echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c - \
-	&& tar -xzvf docker.tgz \
-	&& mv docker/* /usr/local/bin/ \
-	&& rmdir docker \
-	&& rm docker.tgz \
-	&& docker -v
+        && curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
+        && echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c - \
+        && tar -xzvf docker.tgz \
+        && mv docker/* /usr/local/bin/ \
+        && rmdir docker \
+        && rm docker.tgz \
+        && docker -v
 
 # Install extensions
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
@@ -43,11 +43,9 @@ RUN set -xe && \
             mv phpmd.phar /usr/local/bin/phpmd
 
 # Install Composer
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-    php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
-    php composer-setup.php && \
-    php -r "unlink('composer-setup.php');" && \
-    mv composer.phar /usr/local/bin/composer
+RUN set -xe && \
+        curl -sS https://getcomposer.org/installer | php && \
+        mv composer.phar /usr/local/bin/composer
 
 # Install Deploy tools
 RUN curl -LOs https://github.com/rancher/rancher-compose/releases/download/v0.9.0/rancher-compose-linux-amd64-v0.9.0.tar.gz && \
