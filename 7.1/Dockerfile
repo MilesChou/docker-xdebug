@@ -1,4 +1,4 @@
-FROM php:5.6-alpine
+FROM php:7.1-alpine
 LABEL maintainer="MilesChou <jangconan@gmail.com>"
 
 # install xdebug

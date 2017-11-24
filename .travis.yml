@@ -1,0 +1,23 @@
+language: bash
+services: docker
+
+env:
+  - VERSION=7.1
+  - VERSION=7.0
+  - VERSION=5.6
+  - VERSION=5.5
+
+before_script:
+  - cd "$VERSION"
+  - IMAGE="mileschou/php-xdebug"
+  - IMAGE_VERSION="${VERSION}${VARIANT:+-$VARIANT}"
+  - IMAGE_VERSION="${IMAGE_VERSION//'/'/-}"
+  - IMAGE_NAME="$IMAGE:$IMAGE_VERSION"
+  - echo "$IMAGE_NAME"
+
+script:
+  - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
+  - docker images
+  - docker run -i -t --rm $IMAGE_NAME php -m
+  - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+  - docker push $IMAGE
