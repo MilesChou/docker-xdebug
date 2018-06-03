@@ -26,12 +26,3 @@ Desktop.ini
 /.project
 /.buildpath
 /.settings
-
-# Composer files
-/vendor
-/composer.lock
-/composer.phar
-
-# Build files
-/.dapper
-/build
