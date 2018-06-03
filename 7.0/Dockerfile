@@ -13,4 +13,5 @@ RUN set -xe && \
         docker-php-ext-enable xdebug && \
         docker-php-source delete && \
         apk del .build-deps && \
+        php -v && \
         php -m
