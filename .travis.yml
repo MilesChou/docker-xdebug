@@ -16,9 +16,3 @@ before_script:
 
 script:
   - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
-  - docker images
-  - docker run -i -t --rm $IMAGE_NAME php -m
-
-after_success:
-  - if [ "false" == "$TRAVIS_PULL_REQUEST" ]; then docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD ; fi
-  - if [ "false" == "$TRAVIS_PULL_REQUEST" ]; then docker push $IMAGE ; fi
