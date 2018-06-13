@@ -9,10 +9,15 @@ The Docker Image of PHP with XDebug for GitLab CI / Drone CI / Dapper testing.
 ## Supported tags and respective `Dockerfile` links
 
 * [`7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.2/Dockerfile)
+* [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.2/apache/Dockerfile)
 * [`7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.1/Dockerfile)
+* [`7.1-apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.1/apache/Dockerfile)
 * [`7.0` (7.0/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.0/Dockerfile)
+* [`7.0-apache` (7.0/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.0/apache/Dockerfile)
 * [`5.6` (5.6/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/5.6/Dockerfile)
+* [`5.6-apache` (5.6/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/5.6/apache/Dockerfile)
 * [`5.5` (5.5/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/5.5/Dockerfile)
+* [`5.5-apache` (5.5/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/5.5/apache/Dockerfile)
 
 ## Versions and variants
 
