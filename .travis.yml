@@ -8,13 +8,5 @@ env:
 - VERSION=7.1
 - VERSION=7.2
 
-before_script:
-  - cd "$VERSION"
-  - IMAGE="mileschou/php-xdebug"
-  - IMAGE_VERSION="${VERSION}${VARIANT:+-$VARIANT}"
-  - IMAGE_VERSION="${IMAGE_VERSION//'/'/-}"
-  - IMAGE_NAME="$IMAGE:$IMAGE_VERSION"
-  - echo "$IMAGE_NAME"
-
 script:
-  - docker build -t "$IMAGE_NAME" "${VARIANT:-.}"
+- make ${VERSION}
