@@ -15,3 +15,5 @@ RUN set -xe && \
         apk del .build-deps && \
         php -v && \
         php -m
+
+COPY docker-xdebug-* /usr/local/bin/

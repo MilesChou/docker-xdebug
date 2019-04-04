@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+FILENAME=phpunit.phar
+
+if [ "$1" != "" ]; then
+    FILENAME=phpunit-$1.phar
+fi
+
+curl -LO https://phar.phpunit.de/${FILENAME}
+chmod +x ${FILENAME}
+mv ${FILENAME} /usr/local/bin/phpunit

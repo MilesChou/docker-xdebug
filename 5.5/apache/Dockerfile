@@ -9,3 +9,5 @@ RUN set -xe && \
         docker-php-source delete && \
         php -v && \
         php -m
+
+COPY docker-xdebug-* /usr/local/bin/
