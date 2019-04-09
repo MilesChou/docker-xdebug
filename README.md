@@ -8,6 +8,8 @@ The Docker Image of PHP with XDebug for GitLab CI / Drone CI / Dapper testing.
 
 ## Supported tags and respective `Dockerfile` links
 
+* [`7.3` (7.3/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.3/Dockerfile)
+* [`7.3-apache` (7.3/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.3/apache/Dockerfile)
 * [`7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.2/Dockerfile)
 * [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.2/apache/Dockerfile)
 * [`7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-php-xdebug/blob/master/7.1/Dockerfile)
