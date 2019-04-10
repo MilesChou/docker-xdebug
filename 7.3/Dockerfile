@@ -4,6 +4,9 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 FROM php:7.3-alpine
+
+LABEL repository="https://github.com/MilesChou/xdebug-action"
+LABEL homepage="https://github.com/MilesChou/xdebug-action"
 LABEL maintainer="MilesChou <jangconan@gmail.com>"
 
 # install xdebug
