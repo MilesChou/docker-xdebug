@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-IMAGE := mileschou/php-xdebug
+IMAGE := mileschou/xdebug
 .PHONY: 5.5 5.6 7.0 7.1 7.2 7.3
 
 # ------------------------------------------------------------------------------
