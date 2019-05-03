@@ -1,6 +1,7 @@
 # PHP with XDebug
 
-[![Build Status](https://travis-ci.org/MilesChou/docker-xdebug.svg?branch=master)](https://travis-ci.org/MilesChou/docker-xdebug) [![](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/) [![](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
+[![](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
+[![](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 
 See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) for download.
 
