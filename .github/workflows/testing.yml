@@ -1,0 +1,12 @@
+name: Testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Xdebug actions
+        uses: mileschou/docker-xdebug@master
+        with:
+          args: php -v && php -m
