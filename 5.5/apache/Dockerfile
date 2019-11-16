@@ -5,8 +5,8 @@
 #
 FROM php:5.5-apache
 
-LABEL repository="https://github.com/MilesChou/xdebug-action"
-LABEL homepage="https://github.com/MilesChou/xdebug-action"
+LABEL repository="https://github.com/MilesChou/docker-xdebug"
+LABEL homepage="https://github.com/MilesChou/docker-xdebug"
 LABEL maintainer="MilesChou <jangconan@gmail.com>"
 
 # install xdebug
