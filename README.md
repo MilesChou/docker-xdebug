@@ -5,13 +5,13 @@
 [![DockerHub Stars](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 [![DockerHub Pulls](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 
-Docker and GitHub Actions for [Xdebug](https://xdebug.org/). Base on [mileschou/php-xdebug](https://hub.docker.com/r/mileschou/php-xdebug/) image.
+Docker and GitHub Actions for [Xdebug](https://xdebug.org/).
 
 # Usage for Docker
 
 See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) for download Docker Image.
 
-The Docker Image of PHP with XDebug for GitLab CI / Drone CI / Dapper testing.
+The Docker Image with Xdebug for GitLab CI / Drone CI / Dapper / GitHub Actions to test.
 
 # Usage for Actions
 
