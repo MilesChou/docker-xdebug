@@ -1,0 +1,8 @@
+name: Xdebug Action
+description: An action for running project with Xdebug extension
+branding:
+  icon: code
+  color: green
+runs:
+  using: docker
+  image: docker://mileschou/xdebug:7.3

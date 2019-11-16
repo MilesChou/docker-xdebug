@@ -1,11 +1,26 @@
-# PHP with XDebug
+# Docker and Actions for Xdebug in PHP
 
-[![](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
-[![](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
+[![GitHub Release](https://img.shields.io/github/tag/MilesChou/docker-xdebug.svg)](https://github.com/MilesChou/docker-xdebug/releases)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![DockerHub Stars](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
+[![DockerHub Pulls](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 
-See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) for download.
+Docker and GitHub Actions for [Xdebug](https://xdebug.org/). Base on [mileschou/php-xdebug](https://hub.docker.com/r/mileschou/php-xdebug/) image.
+
+# Usage for Docker
+
+See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) for download Docker Image.
 
 The Docker Image of PHP with XDebug for GitLab CI / Drone CI / Dapper testing.
+
+# Usage for Actions
+
+See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) for more information.
+
+```yaml
+- name: Xdebug Action
+  uses: MilesChou/xdebug-action@master
+```
 
 ## Supported tags and respective `Dockerfile` links
 
