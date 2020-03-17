@@ -5,6 +5,9 @@
 [![DockerHub Stars](https://img.shields.io/docker/stars/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 [![DockerHub Pulls](https://img.shields.io/docker/pulls/mileschou/xdebug.svg)](https://hub.docker.com/r/mileschou/xdebug/)
 
+![Testing](https://github.com/MilesChou/docker-xdebug/workflows/Testing/badge.svg)
+![Publish Docker](https://github.com/MilesChou/docker-xdebug/workflows/Publish%20Docker/badge.svg)
+
 Docker and GitHub Actions for [Xdebug](https://xdebug.org/).
 
 # Usage for Docker
