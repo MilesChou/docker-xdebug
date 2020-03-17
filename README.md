@@ -44,6 +44,6 @@ See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) f
 
 ## Versions and variants
 
-* PHP 7.x with Xdebug latest
-* PHP 7.0 with Xdebug latest
+* PHP 7.1+ with Xdebug latest
+* PHP 7.0 with Xdebug 2.9.0
 * PHP 5.x with Xdebug 2.5.5
