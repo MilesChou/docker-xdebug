@@ -3,7 +3,7 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:7.0-alpine
+FROM php:7.4-alpine
 
 LABEL repository="https://github.com/MilesChou/docker-xdebug"
 LABEL homepage="https://github.com/MilesChou/docker-xdebug"
@@ -17,7 +17,7 @@ RUN set -xe && \
             g++ \
             make \
         && \
-        pecl install xdebug-2.9.0 && \
+        pecl install xdebug && \
         docker-php-ext-enable xdebug && \
         docker-php-source delete && \
         apk del .build-deps && \

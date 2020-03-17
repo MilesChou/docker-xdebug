@@ -10,8 +10,6 @@ generated_warning() {
 	EOH
 }
 
-LATEST_VERSION=7.3
-
 VERSIONS="
 5.6
 5.5
@@ -19,15 +17,18 @@ VERSIONS="
 7.1
 7.2
 7.3
+7.4
 "
 
 for version in ${VERSIONS}; do
     main_version=$(echo ${version} | cut -f1 -d.)
 
-    if [[ "$main_version" == "7" ]]; then
-        xdebug_version=xdebug
-    else
+    if [[ "$main_version" == "5" ]]; then
         xdebug_version=xdebug-2.5.5
+    elif [[ "$version" == "7.0" ]]; then
+        xdebug_version=xdebug-2.9.0
+    else
+        xdebug_version=xdebug
     fi
 
     rm -rf ${version}

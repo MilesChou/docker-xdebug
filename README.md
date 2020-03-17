@@ -24,6 +24,8 @@ See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) f
 
 ## Supported tags and respective `Dockerfile` links
 
+* [`7.4` (7.4/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/Dockerfile)
+* [`7.4-apache` (7.4/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/apache/Dockerfile)
 * [`7.3` (7.3/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/Dockerfile)
 * [`7.3-apache` (7.3/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/apache/Dockerfile)
 * [`7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/Dockerfile)
@@ -40,4 +42,5 @@ See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) f
 ## Versions and variants
 
 * PHP 7.x with Xdebug latest
+* PHP 7.0 with Xdebug latest
 * PHP 5.x with Xdebug 2.5.5

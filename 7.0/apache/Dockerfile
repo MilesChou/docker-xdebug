@@ -12,7 +12,7 @@ LABEL maintainer="MilesChou <jangconan@gmail.com>"
 # install xdebug
 RUN set -xe && \
         docker-php-source extract && \
-        pecl install xdebug && \
+        pecl install xdebug-2.9.0 && \
         docker-php-ext-enable xdebug && \
         docker-php-source delete && \
         php -v && \
