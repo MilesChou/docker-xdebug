@@ -16,6 +16,7 @@ RUN set -xe && \
             autoconf \
             g++ \
             make \
+            git \
         && \
         pecl install xdebug && \
         docker-php-ext-enable xdebug && \
