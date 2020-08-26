@@ -5,9 +5,9 @@
 #
 FROM php:5.6-alpine
 
-LABEL repository="https://github.com/MilesChou/docker-xdebug"
-LABEL homepage="https://github.com/MilesChou/docker-xdebug"
-LABEL maintainer="MilesChou <jangconan@gmail.com>"
+LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebug" \
+    repository="https://github.com/MilesChou/docker-xdebug" \
+    maintainer="MilesChou <jangconan@gmail.com>"
 
 # install xdebug
 RUN set -xe && \

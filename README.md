@@ -8,13 +8,9 @@
 ![Testing](https://github.com/MilesChou/docker-xdebug/workflows/Testing/badge.svg)
 ![Publish Docker](https://github.com/MilesChou/docker-xdebug/workflows/Publish%20Docker/badge.svg)
 
-Docker and GitHub Actions for [Xdebug](https://xdebug.org/).
+The Docker Image with [Xdebug](https://xdebug.org/) for GitLab CI / Drone CI / Dapper / GitHub Actions to test.
 
-# Usage for Docker
-
-See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) for download Docker Image.
-
-The Docker Image with Xdebug for GitLab CI / Drone CI / Dapper / GitHub Actions to test.
+See [Docker Hub](https://hub.docker.com/r/mileschou/xdebug/) or [GitHub Container Registry](https://github.com/users/MilesChou/packages/container/package/xdebug) for pulling Docker Image.
 
 # Usage for Actions
 

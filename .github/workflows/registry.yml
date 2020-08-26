@@ -1,34 +1,67 @@
 name: Publish Docker
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
+  latest-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest Alpine version and publish to GitHub Container Registry
+        uses: elgohr/Publish-Docker-Github-Action@2.22
+        with:
+          name: mileschou/xdebug
+          tags: "latest,7.4"
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
+          dockerfile: 7.4/Dockerfile
+
+  latest-apache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest Apache version and publish to GitHub Container Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug
+          tags: "apache,7.4-apache"
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
+          dockerfile: 7.4/apache/Dockerfile
+
   alpine:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
-      - name: Build PHP ${{ matrix.version }} Alpine and publish to DockerHub Registry
+      - name: Build PHP ${{ matrix.version }} Alpine and publish to GitHub Container Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug:${{ matrix.version }}
-          username: mileschou
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
           dockerfile: ${{ matrix.version }}/Dockerfile
 
   apache:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
-      - name: Build PHP ${{ matrix.version }} Apache and publish to DockerHub Registry
+      - name: Build PHP ${{ matrix.version }} Apache and publish to GitHub Container Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug:${{ matrix.version }}-apache
-          username: mileschou
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
           dockerfile: ${{ matrix.version }}/apache/Dockerfile
