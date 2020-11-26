@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.0", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Alpine and publish to GitHub Container Registry
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.0", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Apache and publish to GitHub Container Registry

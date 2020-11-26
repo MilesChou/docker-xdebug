@@ -3,7 +3,7 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:7.1-alpine
+FROM php:8.0.0RC5-alpine
 
 LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebug" \
     repository="https://github.com/MilesChou/docker-xdebug" \
@@ -17,7 +17,7 @@ RUN set -xe && \
             g++ \
             make \
         && \
-        pecl install xdebug-2.9.8 && \
+        pecl install xdebug && \
         docker-php-ext-enable xdebug && \
         docker-php-source delete && \
         apk del .build-deps && \

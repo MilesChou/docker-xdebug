@@ -27,6 +27,8 @@ for version in ${VERSIONS}; do
         xdebug_version=xdebug-2.5.5
     elif [[ "$version" == "7.0" ]]; then
         xdebug_version=xdebug-2.9.0
+    elif [[ "$version" == "7.1" ]]; then
+        xdebug_version=xdebug-2.9.8
     else
         xdebug_version=xdebug
     fi

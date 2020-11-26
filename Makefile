@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
 IMAGE := mileschou/xdebug
-.PHONY: 5.5 5.6 7.0 7.1 7.2 7.3 7.4
+.PHONY: 5.5 5.6 7.0 7.1 7.2 7.3 7.4 8.0
 
 # ------------------------------------------------------------------------------
 
-all: 5.5 5.6 7.0 7.1 7.2 7.3 7.4
+all: 5.5 5.6 7.0 7.1 7.2 7.3 7.4 8.0
 
 5.5:
 	docker build -t=$(IMAGE):5.5 -f 5.5/Dockerfile .
@@ -34,3 +34,7 @@ all: 5.5 5.6 7.0 7.1 7.2 7.3 7.4
 7.4:
 	docker build -t=$(IMAGE):7.4 -f 7.4/Dockerfile .
 	docker build -t=$(IMAGE):7.4-apache -f 7.4/apache/Dockerfile .
+
+8.0:
+	docker build -t=$(IMAGE):8.0 -f 8.0/Dockerfile .
+	docker build -t=$(IMAGE):8.0-apache -f 8.0/apache/Dockerfile .
