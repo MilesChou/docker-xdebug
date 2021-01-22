@@ -3,7 +3,7 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:8.0.0RC5-alpine
+FROM php:8.0-alpine
 
 LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebug" \
     repository="https://github.com/MilesChou/docker-xdebug" \

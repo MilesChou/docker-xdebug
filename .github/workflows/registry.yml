@@ -14,11 +14,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
-          tags: "latest,7.4"
+          tags: "latest,8.0"
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_PAT }}
           registry: ghcr.io
-          dockerfile: 7.4/Dockerfile
+          dockerfile: 8.0/Dockerfile
 
   latest-apache:
     runs-on: ubuntu-latest
@@ -28,17 +28,17 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug
-          tags: "apache,7.4-apache"
+          tags: "apache,8.0-apache"
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_PAT }}
           registry: ghcr.io
-          dockerfile: 7.4/apache/Dockerfile
+          dockerfile: 8.0/apache/Dockerfile
 
   alpine:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["8.0", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Alpine and publish to GitHub Container Registry
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["8.0", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Apache and publish to GitHub Container Registry
