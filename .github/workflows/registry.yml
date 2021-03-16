@@ -6,11 +6,11 @@ on:
       - master
 
 jobs:
-  latest-alpine:
+  latest-cli:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Build latest Alpine version and publish to GitHub Container Registry
+      - name: Build latest CLI version and publish to GitHub Container Registry
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
@@ -19,6 +19,20 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
           registry: ghcr.io
           dockerfile: 8.0/Dockerfile
+
+  latest-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest Alpine version and publish to GitHub Container Registry
+        uses: elgohr/Publish-Docker-Github-Action@2.22
+        with:
+          name: mileschou/xdebug
+          tags: "alpine,8.0-alpine"
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
+          dockerfile: 8.0/alpine/Dockerfile
 
   latest-apache:
     runs-on: ubuntu-latest
@@ -34,6 +48,22 @@ jobs:
           registry: ghcr.io
           dockerfile: 8.0/apache/Dockerfile
 
+  cli:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+    steps:
+      - uses: actions/checkout@master
+      - name: Build PHP ${{ matrix.version }} CLI and publish to GitHub Container Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug:${{ matrix.version }}
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+          registry: ghcr.io
+          dockerfile: ${{ matrix.version }}/Dockerfile
+
   alpine:
     runs-on: ubuntu-latest
     strategy:
@@ -44,11 +74,11 @@ jobs:
       - name: Build PHP ${{ matrix.version }} Alpine and publish to GitHub Container Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: mileschou/xdebug:${{ matrix.version }}
+          name: mileschou/xdebug:${{ matrix.version }}-alpine
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_PAT }}
           registry: ghcr.io
-          dockerfile: ${{ matrix.version }}/Dockerfile
+          dockerfile: ${{ matrix.version }}/alpine/Dockerfile
 
   apache:
     runs-on: ubuntu-latest

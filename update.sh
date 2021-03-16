@@ -36,13 +36,20 @@ for version in ${VERSIONS}; do
 
     rm -rf ${version}
     mkdir -p ${version}
+    mkdir -p ${version}/alpine
     mkdir -p ${version}/apache
 
     generated_warning > ${version}/Dockerfile
+    cat Dockerfile-cli.template | \
+        sed -e 's!%%PHP_VERSION%%!'"${version}"'!' | \
+        sed -e 's!%%XDEBUG_VERSION%%!'"${xdebug_version}"'!' \
+        >> ${version}/Dockerfile
+
+    generated_warning > ${version}/alpine/Dockerfile
     cat Dockerfile-alpine.template | \
         sed -e 's!%%PHP_VERSION%%!'"${version}-alpine"'!' | \
         sed -e 's!%%XDEBUG_VERSION%%!'"${xdebug_version}"'!' \
-        >> ${version}/Dockerfile
+        >> ${version}/alpine/Dockerfile
 
     generated_warning > ${version}/apache/Dockerfile
     cat Dockerfile-apache.template | \
