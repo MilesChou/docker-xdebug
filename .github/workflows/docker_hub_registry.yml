@@ -1,0 +1,91 @@
+name: Publish to Docker Hub Registry
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  latest-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest CLI version and publish
+        uses: elgohr/Publish-Docker-Github-Action@2.22
+        with:
+          name: mileschou/xdebug
+          tags: "latest,cli,8.0"
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: 8.0/Dockerfile
+
+  latest-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest Alpine version and publish
+        uses: elgohr/Publish-Docker-Github-Action@2.22
+        with:
+          name: mileschou/xdebug
+          tags: "alpine,8.0-alpine"
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: 8.0/alpine/Dockerfile
+
+  latest-apache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build latest Apache version and publish
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug
+          tags: "apache,8.0-apache"
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: 8.0/apache/Dockerfile
+
+  cli:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+    steps:
+      - uses: actions/checkout@master
+      - name: Build PHP ${{ matrix.version }} CLI and publish
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug:${{ matrix.version }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: ${{ matrix.version }}/Dockerfile
+
+  alpine:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+    steps:
+      - uses: actions/checkout@master
+      - name: Build PHP ${{ matrix.version }} Alpine and publish
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug:${{ matrix.version }}-alpine
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: ${{ matrix.version }}/alpine/Dockerfile
+
+  apache:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+    steps:
+      - uses: actions/checkout@master
+      - name: Build PHP ${{ matrix.version }} Apache and publish
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: mileschou/xdebug:${{ matrix.version }}-apache
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          dockerfile: ${{ matrix.version }}/apache/Dockerfile

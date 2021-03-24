@@ -1,4 +1,4 @@
-name: Publish Docker
+name: Publish to GitHub Container Registry
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Build latest CLI version and publish to GitHub Container Registry
+      - name: Build latest CLI version and publish
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Build latest Alpine version and publish to GitHub Container Registry
+      - name: Build latest Alpine version and publish
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Build latest Apache version and publish to GitHub Container Registry
+      - name: Build latest Apache version and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug
@@ -55,7 +55,7 @@ jobs:
         version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
-      - name: Build PHP ${{ matrix.version }} CLI and publish to GitHub Container Registry
+      - name: Build PHP ${{ matrix.version }} CLI and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug:${{ matrix.version }}
@@ -71,7 +71,7 @@ jobs:
         version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
-      - name: Build PHP ${{ matrix.version }} Alpine and publish to GitHub Container Registry
+      - name: Build PHP ${{ matrix.version }} Alpine and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug:${{ matrix.version }}-alpine
@@ -87,7 +87,7 @@ jobs:
         version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
-      - name: Build PHP ${{ matrix.version }} Apache and publish to GitHub Container Registry
+      - name: Build PHP ${{ matrix.version }} Apache and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug:${{ matrix.version }}-apache
