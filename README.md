@@ -23,21 +23,37 @@ See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) f
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`8.0` (8.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/Dockerfile)
-* [`8.0-apache` (8.0/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/apache/Dockerfile)
+### PHP CLI
+
+* [`latest`, `8.0`, `cli`, `8.0-cli` (8.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/Dockerfile)
 * [`7.4` (7.4/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/Dockerfile)
-* [`7.4-apache` (7.4/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/apache/Dockerfile)
 * [`7.3` (7.3/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/Dockerfile)
-* [`7.3-apache` (7.3/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/apache/Dockerfile)
 * [`7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/Dockerfile)
-* [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/apache/Dockerfile)
 * [`7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/Dockerfile)
-* [`7.1-apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/apache/Dockerfile)
 * [`7.0` (7.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/Dockerfile)
-* [`7.0-apache` (7.0/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/apache/Dockerfile)
 * [`5.6` (5.6/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/Dockerfile)
-* [`5.6-apache` (5.6/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/apache/Dockerfile)
 * [`5.5` (5.5/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.5/Dockerfile)
+
+### Alpine
+
+* [`alpine`, `8.0-alpine` (8.0/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/alpine/Dockerfile)
+* [`7.4-alpine` (7.4/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/alpine/Dockerfile)
+* [`7.3-alpine` (7.3/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/alpine/Dockerfile)
+* [`7.2-alpine` (7.2/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/alpine/Dockerfile)
+* [`7.1-alpine` (7.1/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/alpine/Dockerfile)
+* [`7.0-alpine` (7.0/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/alpine/Dockerfile)
+* [`5.6-alpine` (5.6/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/alpine/Dockerfile)
+* [`5.5-alpine` (5.5/alpine/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.5/alpine/Dockerfile)
+
+### Apache
+
+* [`apache`, `8.0-apache` (8.0/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/apache/Dockerfile)
+* [`7.4-apache` (7.4/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/apache/Dockerfile)
+* [`7.3-apache` (7.3/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/apache/Dockerfile)
+* [`7.2-apache` (7.2/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/apache/Dockerfile)
+* [`7.1-apache` (7.1/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/apache/Dockerfile)
+* [`7.0-apache` (7.0/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/apache/Dockerfile)
+* [`5.6-apache` (5.6/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/apache/Dockerfile)
 * [`5.5-apache` (5.5/apache/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.5/apache/Dockerfile)
 
 ## Versions and variants
