@@ -58,7 +58,8 @@ jobs:
       - name: Build PHP ${{ matrix.version }} CLI and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: mileschou/xdebug:${{ matrix.version }}
+          name: mileschou/xdebug
+          tags: ${{ matrix.version }},${{ matrix.version }}-cli
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_PAT }}
           registry: ghcr.io

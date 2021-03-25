@@ -26,13 +26,13 @@ See [GitHub Marketplace](https://github.com/marketplace/actions/xdebug-action) f
 ### PHP CLI
 
 * [`latest`, `8.0`, `cli`, `8.0-cli` (8.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/8.0/Dockerfile)
-* [`7.4` (7.4/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/Dockerfile)
-* [`7.3` (7.3/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/Dockerfile)
-* [`7.2` (7.2/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/Dockerfile)
-* [`7.1` (7.1/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/Dockerfile)
-* [`7.0` (7.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/Dockerfile)
-* [`5.6` (5.6/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/Dockerfile)
-* [`5.5` (5.5/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.5/Dockerfile)
+* [`7.4`, `7.4-cli` (7.4/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.4/Dockerfile)
+* [`7.3`, `7.3-cli` (7.3/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.3/Dockerfile)
+* [`7.2`, `7.2-cli` (7.2/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.2/Dockerfile)
+* [`7.1`, `7.1-cli` (7.1/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.1/Dockerfile)
+* [`7.0`, `7.0-cli` (7.0/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/7.0/Dockerfile)
+* [`5.6`, `5.6-cli` (5.6/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.6/Dockerfile)
+* [`5.5`, `5.5-cli` (5.5/Dockerfile)](https://github.com/MilesChou/docker-xdebug/blob/master/5.5/Dockerfile)
 
 ### Alpine
 

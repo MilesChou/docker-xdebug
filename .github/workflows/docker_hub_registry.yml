@@ -55,7 +55,8 @@ jobs:
       - name: Build PHP ${{ matrix.version }} CLI and publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: mileschou/xdebug:${{ matrix.version }}
+          name: mileschou/xdebug
+          tags: ${{ matrix.version }},${{ matrix.version }}-cli
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           dockerfile: ${{ matrix.version }}/Dockerfile
