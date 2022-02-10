@@ -16,11 +16,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
-          tags: "latest,8.0"
+          tags: "latest,8.1"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.0/Dockerfile
+          dockerfile: 8.1/Dockerfile
 
   latest-alpine:
     runs-on: ubuntu-latest
@@ -30,11 +30,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           name: mileschou/xdebug
-          tags: "alpine,8.0-alpine"
+          tags: "alpine,8.1-alpine"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.0/alpine/Dockerfile
+          dockerfile: 8.1/alpine/Dockerfile
 
   latest-apache:
     runs-on: ubuntu-latest
@@ -44,17 +44,17 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: mileschou/xdebug
-          tags: "apache,8.0-apache"
+          tags: "apache,8.1-apache"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.0/apache/Dockerfile
+          dockerfile: 8.1/apache/Dockerfile
 
   cli:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} CLI and publish
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Alpine and publish
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Apache and publish
