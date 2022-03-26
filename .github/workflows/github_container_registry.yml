@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
   schedule:
     - cron: '30 4 * * 3' # Weekly on Wednesday at 04:30
 
@@ -13,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest CLI version and publish
-        uses: elgohr/Publish-Docker-Github-Action@2.22
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug
           tags: "latest,8.1"
@@ -27,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest Alpine version and publish
-        uses: elgohr/Publish-Docker-Github-Action@2.22
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug
           tags: "alpine,8.1-alpine"
@@ -41,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest Apache version and publish
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug
           tags: "apache,8.1-apache"
@@ -58,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} CLI and publish
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug
           tags: ${{ matrix.version }},${{ matrix.version }}-cli
@@ -75,7 +76,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Alpine and publish
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug:${{ matrix.version }}-alpine
           username: mileschou
@@ -91,7 +92,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Apache and publish
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         with:
           name: mileschou/xdebug:${{ matrix.version }}-apache
           username: mileschou
