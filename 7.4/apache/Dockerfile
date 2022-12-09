@@ -12,7 +12,7 @@ LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebu
 # install xdebug
 RUN set -xe && \
         docker-php-source extract && \
-        pecl install xdebug && \
+        pecl install xdebug-3.1.6 && \
         docker-php-ext-enable xdebug && \
         docker-php-source delete && \
         php -v && \

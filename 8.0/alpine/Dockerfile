@@ -15,6 +15,7 @@ RUN set -xe && \
         apk add --no-cache --virtual .build-deps \
             autoconf \
             g++ \
+            linux-headers \
             make \
         && \
         pecl install xdebug && \

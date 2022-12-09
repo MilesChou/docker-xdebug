@@ -20,10 +20,11 @@ VERSIONS="
 7.4
 8.0
 8.1
+8.2
 "
 
 for version in ${VERSIONS}; do
-    main_version=$(echo ${version} | cut -f1 -d.)
+    main_version=$(echo "${version}" | cut -f1 -d.)
 
     if [[ "$main_version" == "5" ]]; then
         xdebug_version=xdebug-2.5.5
@@ -31,30 +32,43 @@ for version in ${VERSIONS}; do
         xdebug_version=xdebug-2.9.0
     elif [[ "$version" == "7.1" ]]; then
         xdebug_version=xdebug-2.9.8
+    elif [[ "$version" == "7.2" ]]; then
+        xdebug_version=xdebug-3.1.6
+    elif [[ "$version" == "7.3" ]]; then
+        xdebug_version=xdebug-3.1.6
+    elif [[ "$version" == "7.4" ]]; then
+        xdebug_version=xdebug-3.1.6
     else
         xdebug_version=xdebug
     fi
 
-    rm -rf ${version}
-    mkdir -p ${version}
-    mkdir -p ${version}/alpine
-    mkdir -p ${version}/apache
+    if [[ "$main_version" == "8" ]]; then
+        alpine_file=Dockerfile-alpine-8.template
+    else
+        alpine_file=Dockerfile-alpine.template
+    fi
 
-    generated_warning > ${version}/Dockerfile
+    rm -rf "${version}"
+    mkdir -p "${version}"
+    mkdir -p "${version}"/alpine
+    mkdir -p "${version}"/apache
+
+    generated_warning > "${version}"/Dockerfile
     cat Dockerfile-cli.template | \
         sed -e 's!%%PHP_VERSION%%!'"${version}"'!' | \
         sed -e 's!%%XDEBUG_VERSION%%!'"${xdebug_version}"'!' \
-        >> ${version}/Dockerfile
+        >> "${version}"/Dockerfile
 
-    generated_warning > ${version}/alpine/Dockerfile
-    cat Dockerfile-alpine.template | \
+
+    generated_warning > "${version}"/alpine/Dockerfile
+    cat ${alpine_file} | \
         sed -e 's!%%PHP_VERSION%%!'"${version}-alpine"'!' | \
         sed -e 's!%%XDEBUG_VERSION%%!'"${xdebug_version}"'!' \
-        >> ${version}/alpine/Dockerfile
+        >> "${version}"/alpine/Dockerfile
 
-    generated_warning > ${version}/apache/Dockerfile
+    generated_warning > "${version}"/apache/Dockerfile
     cat Dockerfile-apache.template | \
         sed -e 's!%%PHP_VERSION%%!'"${version}-apache"'!' | \
         sed -e 's!%%XDEBUG_VERSION%%!'"${xdebug_version}"'!' \
-        >> ${version}/apache/Dockerfile
+        >> "${version}"/apache/Dockerfile
 done

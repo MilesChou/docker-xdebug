@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest CLI version and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug
-          tags: "latest,cli,8.1"
+          tags: "latest,cli,8.2"
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           dockerfile: 8.1/Dockerfile
@@ -25,10 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest Alpine version and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug
-          tags: "alpine,8.1-alpine"
+          tags: "alpine,8.2-alpine"
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           dockerfile: 8.1/alpine/Dockerfile
@@ -38,10 +38,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build latest Apache version and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug
-          tags: "apache,8.1-apache"
+          tags: "apache,8.2-apache"
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           dockerfile: 8.1/apache/Dockerfile
@@ -50,11 +50,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.1", "8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} CLI and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug
           tags: ${{ matrix.version }},${{ matrix.version }}-cli
@@ -66,11 +66,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.1", "8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Alpine and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug:${{ matrix.version }}-alpine
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -81,11 +81,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
+        version: ["8.1", "8.0", "7.4", "7.3", "7.2", "7.1", "7.0", "5.6", "5.5"]
     steps:
       - uses: actions/checkout@master
       - name: Build PHP ${{ matrix.version }} Apache and publish
-        uses: elgohr/Publish-Docker-Github-Action@3.04
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug:${{ matrix.version }}-apache
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
