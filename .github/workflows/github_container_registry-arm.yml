@@ -1,0 +1,61 @@
+name: Publish to GitHub Container Registry for ARM image
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+  schedule:
+    - cron: '30 4 * * 3' # Weekly on Wednesday at 04:30
+
+jobs:
+  latest-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build latest CLI version and publish
+        uses: elgohr/Publish-Docker-Github-Action@v5
+        with:
+          name: mileschou/xdebug
+          tags: "latest,8.2"
+          username: mileschou
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          dockerfile: 8.2/Dockerfile
+          platforms: linux/arm64
+
+  latest-alpine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build latest Alpine version and publish
+        uses: elgohr/Publish-Docker-Github-Action@v5
+        with:
+          name: mileschou/xdebug
+          tags: "alpine,8.2-alpine"
+          username: mileschou
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          dockerfile: 8.2/alpine/Dockerfile
+          platforms: linux/arm64
+
+  latest-apache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build latest Apache version and publish
+        uses: elgohr/Publish-Docker-Github-Action@v5
+        with:
+          name: mileschou/xdebug
+          tags: "apache,8.2-apache"
+          username: mileschou
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          dockerfile: 8.2/apache/Dockerfile
+          platforms: linux/arm64
