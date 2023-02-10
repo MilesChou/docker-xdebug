@@ -18,7 +18,7 @@ jobs:
       - name: Build latest CLI version and publish
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: mileschou/xdebug
+          name: mileschou/xdebug/arm
           tags: "latest,8.2"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +35,7 @@ jobs:
       - name: Build latest Alpine version and publish
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: mileschou/xdebug
+          name: mileschou/xdebug/arm
           tags: "alpine,8.2-alpine"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -52,7 +52,7 @@ jobs:
       - name: Build latest Apache version and publish
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: mileschou/xdebug
+          name: mileschou/xdebug/arm
           tags: "apache,8.2-apache"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
