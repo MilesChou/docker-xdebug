@@ -3,7 +3,7 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:8.2
+FROM php:8.3-alpine
 
 LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebug" \
     repository="https://github.com/MilesChou/docker-xdebug" \
@@ -11,10 +11,15 @@ LABEL org.opencontainers.image.source="https://github.com/MilesChou/docker-xdebu
 
 # install xdebug
 RUN set -xe && \
-        docker-php-source extract && \
+        apk add --no-cache --virtual .build-deps \
+            autoconf \
+            g++ \
+            linux-headers \
+            make \
+        && \
         pecl install xdebug && \
         docker-php-ext-enable xdebug && \
-        docker-php-source delete && \
+        apk del .build-deps && \
         php -v && \
         php -m
 
