@@ -19,11 +19,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug/arm
-          tags: "latest,8.2"
+          tags: "latest,8.4"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.2/Dockerfile
+          dockerfile: 8.4/Dockerfile
           platforms: linux/arm64
 
   latest-alpine:
@@ -36,11 +36,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug/arm
-          tags: "alpine,8.2-alpine"
+          tags: "alpine,8.4-alpine"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.2/alpine/Dockerfile
+          dockerfile: 8.4/alpine/Dockerfile
           platforms: linux/arm64
 
   latest-apache:
@@ -53,9 +53,9 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: mileschou/xdebug/arm
-          tags: "apache,8.2-apache"
+          tags: "apache,8.4-apache"
           username: mileschou
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          dockerfile: 8.2/apache/Dockerfile
+          dockerfile: 8.4/apache/Dockerfile
           platforms: linux/arm64
